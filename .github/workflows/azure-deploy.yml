@@ -1,4 +1,4 @@
-name: Build and deploy Node.js app to Azure Web App
+name: Build and deploy Vite React app to Azure Web App
 
 on:
   push:
@@ -15,10 +15,10 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '24.14.0'
+          node-version: '24.14.0'  # Vite works with Node 16+ 
 
       - run: npm install
-      - run: npm run build  # if applicable
+      - run: npm run build  # creates 'dist/' folder
 
       - name: 'Login via Azure CLI'
         uses: azure/login@v1
@@ -29,4 +29,4 @@ jobs:
         uses: azure/webapps-deploy@v3
         with:
           app-name: test-react
-          package: .
+          package: ./dist  # deploy only the built folder
