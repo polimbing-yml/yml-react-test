@@ -27,9 +27,9 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZURE_CLIENT_ID }}
-          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
-          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_6C19DDA3DBE74E4FAA966EADE1AD08D7 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_34FBF3396FDB4D14B33A30E20E5D8AB1 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_EB0F986F7EB841B7BE8D65A5F7B94789 }}
 
       - name: Deploy dist folder to Azure Web App
         uses: azure/webapps-deploy@v3
